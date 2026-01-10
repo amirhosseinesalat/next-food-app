@@ -1,10 +1,15 @@
 import { useRouter } from "next/router";
-function Details() {
+import DetailsPage from "../../components/templates/DetailsPage";
+function Details({ data }) {
   const router = useRouter();
   if (router.isFallback) {
     return <h2>Loading...</h2>;
   }
-  return <div>Details</div>;
+  return (
+    <div>
+      <DetailsPage {...data} />
+    </div>
+  );
 }
 
 export default Details;
